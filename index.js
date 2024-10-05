@@ -19,9 +19,9 @@ const app = express({
 
 const db = new pg.Client({
     user: "mini_3",
-    host: "dpg-cs02b1a3esus7399f6tg-a",
-    database: "hospital_320p",
-    password: "nVKe2aC5lafHDVTL2MLq3FIt4yvbiUXV",
+    host: "dpg-cs0ha7ggph6c73a8edl0-a",
+    database: "hospital_yo3l",
+    password: "wKlFIzMdX7za6bjwUr0EPKh1OIXWwnw7",
     port: 5432,
 });
 db.connect();
