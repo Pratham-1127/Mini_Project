@@ -8,7 +8,7 @@ import multer from 'multer';
 import path from 'path';
 
 const ADMIN = 'hospital';
-const PASSWORD = 'localhost';
+const PASSWORD = 'mini3';
 
 const PORT = 3000;
 const app = express({
@@ -72,15 +72,6 @@ app.get('/', (req,res) => {
 //         res.status(500).json({ error: 'Failed to get response from chatbot' });
 //     }
 // });
-
-function dun_name() {
-    //body
-}
-
-() => {
-    //body
-}
-
 
 app.get('/doctors', async (req, res) => {
     try {
@@ -569,60 +560,8 @@ app.get('/patient-appointments', isPatientAuthenticated, async (req, res) => {
     }
 });
 
-
-// app.get('/patient-profile/edit', isPatientAuthenticated, async (req, res) => {
-//     const patientId = req.session.patient.id;
-//     try {
-//         const result = await db.query('SELECT * FROM patients WHERE patient_id = $1', [patientId]);
-//         if (result.rows.length > 0) {
-//             res.render('edit-profile.ejs', { patient: result.rows[0] });
-//         } else {
-//             res.status(404).send('Patient not found');
-//         }
-//     } catch (err) {
-//         console.error('Error fetching patient details:', err);
-//         res.status(500).send('Server error');
-//     }
-// });
-
-// app.post('/patient-profile/edit', isPatientAuthenticated, async (req, res) => {
-//     const patientId = req.session.patient.id;
-//     console.log('Request Body:', req.body); // Check form data
-//     const { first_name, last_name, date_of_birth, gender, phone_number, email, address } = req.body;
-
-//     try {
-//         const result = await db.query(
-//             'UPDATE patients SET first_name = $1, last_name = $2, date_of_birth = $3, gender = $4, phone_number = $5, email = $6, address = $7 WHERE patient_id = $8',
-//             [first_name, last_name, date_of_birth, gender, phone_number, email, address, patientId]
-//         );
-//         console.log('Update Result:', result); // Check query result
-//         res.redirect('/patient-profile');
-//     } catch (err) {
-//         console.error('Error updating patient profile:', err);
-//         res.status(500).send('Server error');
-//     }
-// });
-
-// app.post('/update-patient', async (req, res) => {
-//     const { first_name, last_name, date_of_birth, gender, phone_number, email, address } = req.body;
-//     //console.log(req.session.patient.id);
-    
-
-//     try {
-//         await db.query(
-//             'UPDATE patients SET first_name = $1, last_name = $2, date_of_birth = $3, gender = $4, phone_number = $5, email = $6, address = $7 WHERE patient_id = $8',
-//             [first_name, last_name, date_of_birth, gender, phone_number, email, address, req.session.patient.id]
-//         );
-//         res.json({ success: true });
-//     } catch (err) {
-//         console.error(err);
-//         res.json({ success: false });
-//     }
-// });
-
-
 const storage = multer.diskStorage({
-    destination: './uploads/', // folder to store images
+    destination: './uploads/', 
     filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
@@ -630,8 +569,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage: storage,
-    limits: { fileSize: 10 * 1024 * 1024 }, // Limit to 10MB
-}).single('image'); // Expect a field called 'image' for the file upload
+    limits: { fileSize: 10 * 1024 * 1024 },
+}).single('image');
 
 app.post('/update-patient', async (req, res) => {
     upload(req, res, async (err) => {
@@ -639,11 +578,10 @@ app.post('/update-patient', async (req, res) => {
             return res.status(400).send('Error uploading file');
         }
         
-        // File is uploaded, now save the file path and patient details to the database
         const filePath = req.file ? `/uploads/${req.file.filename}` : null;
         //console.log(filePath)
         const { first_name, last_name, date_of_birth, gender, phone_number, email, address } = req.body;
-        const patientId = req.body.patientId; // Assuming patientId is sent in the form data
+        const patientId = req.body.patientId;
         //console.log(patientId)
         // console.log(req.session)
 
