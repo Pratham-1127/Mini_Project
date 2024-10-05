@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hospital Name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/about-us.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>About Us</h1>
+        <p>Your Health is Our Priority</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Welcome to Our Community</h2>
+            <p>At Hospital Name, we pride ourselves on providing compassionate care and exceptional service. Our commitment to the health and wellbeing of our patients drives everything we do.</p>
+        </section>
+
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>We strive to deliver the highest quality of healthcare with a focus on patient comfort, safety, and trust.</p>
+        </section>
+
+        <section class="carousel">
+            <h2>Our Services in Action</h2>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="https://images.pexels.com/photos/668300/pexels-photo-668300.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Emergency Services">
+                    <img src="https://images.pexels.com/photos/3376799/pexels-photo-3376799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Surgical Services">
+                    <img src="https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Community Engagement">
+                </div>
+                <div class="carousel-buttons">
+                    <button class="carousel-button prev" onclick="prevSlide()" aria-label="Previous Slide">❮</button>
+                    <button class="carousel-button next" onclick="nextSlide()" aria-label="Next Slide">❯</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <h2>Meet Our Dedicated Team</h2>
+            <div class="team-member">
+                <img src="https://www.sonicseo.com/wp-content/uploads/2020/07/surgeon.jpg" alt="Dr. Jane Doe, Chief Medical Officer">
+                <h3>Dr. Jane Doe</h3>
+                <p>Chief Medical Officer</p>
+                <p>Dr. Doe has over 20 years of experience in the medical field, specializing in patient-centered care.</p>
+            </div>
+            <div class="team-member">
+                <img src="https://leman-clinic.ch/wp-content/uploads/2018/11/02.jpg" alt="Dr. John Smith, Head of Surgery">
+                <h3>Dr. John Smith</h3>
+                <p>Head of Surgery</p>
+                <p>Dr. Smith is renowned for his expertise in minimally invasive surgical techniques.</p>
+            </div>
+            <div class="team-member">
+                <img src="https://www.humanitas.net/content/uploads/2017/10/doctors.jpg" alt="Nurse Emily, Pediatric Nurse">
+                <h3>Nurse Emily</h3>
+                <p>Pediatric Nurse</p>
+                <p>Nurse Emily has a passion for providing compassionate care to our youngest patients.</p>
+            </div>
+        </section>
+
+        <section class="videos">
+            <h2>Patient Testimonials</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/M5rqjzWv2X8?rel=0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Our Comprehensive Services</h2>
+            <ul>
+                <li>24/7 Emergency Services</li>
+                <li>Family Medicine</li>
+                <li>Surgical Services</li>
+                <li>Pediatric Care</li>
+                <li>Physical Rehabilitation</li>
+            </ul>
+        </section>
+
+        <section class="history">
+            <h2>Our History</h2>
+            <p>Founded in 2000, Hospital Name has committed itself to innovation in healthcare, adapting to community needs while delivering exceptional care.</p>
+        </section>
+
+        <section class="community">
+            <h2>Community Engagement</h2>
+            <p>We actively promote health and wellness in our community through educational programs and outreach initiatives.</p>
+        </section>
+
+        <section class="testimonials">
+            <h2>Patient Testimonials</h2>
+            <blockquote>
+                <p>"The team at Hospital Name made my experience seamless. I felt cared for every step of the way." - <strong>Jane F.</strong></p>
+            </blockquote>
+            <blockquote>
+                <p>"Exceptional staff and services. Highly recommend!" - <strong>John B.</strong></p>
+            </blockquote>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>For more information about our services or to schedule an appointment, please <a href="contact.html">get in touch with us</a>.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 MAP. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll('.carousel-slide img');
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000); // Extended delay to 5 seconds
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex > document.querySelectorAll('.carousel-slide img').length) {slideIndex = 1}
+            showSlides();
+        }
+        
+        function prevSlide() {
+            slideIndex--;
+            if (slideIndex < 1) {slideIndex = document.querySelectorAll('.carousel-slide img').length}
+            showSlides();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    min-height: 500px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.admin-options {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.option-card {
+    background-color: #9cf291;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-card:hover {
+    background-color: #78cd5c;
+}
+
+.option-card a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}

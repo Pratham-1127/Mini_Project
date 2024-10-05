@@ -1,0 +1,80 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f4f4f4; /* Ensures background color covers the whole page */
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures .main covers the entire viewport height */
+    background-color: #f4f4f4; /* Background color for .main */
+    margin: 0;
+}
+
+.container {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 40%; /* Change this to 40% */
+    max-width: 400px; /* Optional: Set a max-width to prevent it from getting too large */
+    border: 2px solid #7cfc00;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #7ee858;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+input:focus, select:focus {
+    border-color: #3ae100;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #06D001;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #3ae100;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #7cfc00;
+    opacity: 0.1;
+    border-radius: 8px;
+    z-index: -1;
+}

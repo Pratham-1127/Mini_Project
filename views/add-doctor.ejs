@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Doctor</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles/add-doctor.css">
+    </head>
+    <body>
+        <%- include('partials/admin-navbar.ejs') %>
+        <div class="container">
+            <h1>Add a New Doctor</h1>
+            <form action="/add-doctor" method="POST">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+
+                <label for="speciality">Speciality:</label>
+                <input type="text" id="speciality" name="speciality" required>
+
+                <label for="qualification">Qualification:</label>
+                <input type="text" id="qualification" name="qualification"
+                    required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value disabled selected>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="imageurl">Image URL:</label>
+                <input type="text" id="imageurl" name="imageurl">
+
+                <label for="time_slots">Available Time Slots (one per line):</label>
+            <textarea id="time_slots" name="time_slots" rows="5"  placeholder="e.g. 9:00 AM - 11:00 AM&#10;2:00 PM - 4:00 PM"></textarea>
+
+                <button type="submit">Add Doctor</button>
+            </form>
+        </div>
+
+
+        <script>
+            document.getElementById('addDoctorForm').addEventListener('submit', async (event) => {
+                event.preventDefault();
+    
+                const formData = new FormData(event.target);
+                const data = Object.fromEntries(formData.entries());
+    
+                try {
+                    const response = await fetch('/add-doctor', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data),
+                    });
+    
+                    const result = await response.json();
+    
+                    if (result.success) {
+                        alert(result.message);
+                        window.location.href = '/admin';
+                    } else {
+                        alert(result.message);
+                        window.location.href = '/admin';
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Server error, couldn\'t add doctor.');
+                    window.location.href = '/admin';
+                }
+            });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>

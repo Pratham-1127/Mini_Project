@@ -1,0 +1,258 @@
+<%- include("partials/header.ejs") %>
+
+<!-- Header-->
+<div id="head" class="d-flex justify-content-between" style="padding: 20px;">
+  <div class="head-1">
+    <form class="d-flex position-relative" role="search"
+      id="doctor-search-form">
+      <input id="doctor-search-input" class="form-control me-2" type="search"
+        placeholder="Find a doctor"
+        aria-label="Search" style="width: 400px;" autocomplete="off">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+      <ul id="doctor-suggestions" class="list-group position-absolute"></ul>
+    </form>
+  </div>
+
+  <div class="head-2">
+    <p
+      style="font-weight: bolder; font-size: large; color: #000000">Lifelinenumber:
+    </p>
+    <button id="helpline">
+      <a href="tel:1234567890"> <img src="/images/phone.svg" alt>
+         1234567890
+      </a>
+    </button>
+  </div>
+
+</div>
+
+<%- include("partials/navbar.ejs") %>
+
+<!-- Item-1-->
+
+<div class="container-1">
+  <div class="item-1">
+    <h2 class="item-1-items">Committed to your well-being.</h2>
+    <h2 class="item-1-items">Your Partner in Health.</h2>
+    <h6 style="color: #7A7A7A;" class="item-1-items"
+      style="color: #7A7A7A;">Your Health, Our Mission.</h6>
+
+    <form action="/about-us" method="get">
+      <button type="submit" id="container1-item-1-button-1">Know more</button>
+    </form>
+
+    <form action="/appointments" method="get">
+      <button type="submit" id="container1-item-1-button-2">Make an
+        appointment</button>
+    </form>
+  </div>
+</div>
+
+<!-- Item-2 -->
+
+<div class="item-2-head">
+  <h2>Excellence Across Every Medical Specialty</h2>
+  <h6 style="color: #7A7A7A;">Learn about the world class health care we
+    provide</h6>
+</div>
+
+<div class="container-2">
+  <div class="item-2-img">
+    <img src="/images/hospotal-item-2.webp" alt>
+  </div>
+
+  <div class="item-2-items">
+    <div class="items-2-row">
+      <div class="items-2-col">
+        <form id="cardiologyForm" action="/doctors" method="GET">
+          <input type="hidden" name="Speciality" value="Cardiology">
+          <button type="submit" style="display: none;">Submit</button>
+          <a
+            href="#"
+            class="pg_widget"
+            onclick="document.getElementById('cardiologyForm').submit(); return false;">
+            <img
+              src="/images/cardiology_icon.svg"
+              alt="icon">
+            <h5 class="items-2-h5">Cardiology</h5>
+          </a>
+        </form>
+      </div>
+
+      <div class="items-2-col">
+        <form id="neurologyForm" action="/doctors" method="GET">
+          <input type="hidden" name="Speciality" value="Neurology">
+          <button type="submit" style="display: none;">Submit</button>
+          <a
+            href="#"
+            class="pg_widget"
+            onclick="document.getElementById('neurologyForm').submit(); return false;">
+            <img
+              src="/images/neurology_icon.svg"
+              alt="icon">
+            <h5 class="items-2-h5">Neurology</h5>
+          </a>
+        </form>
+      </div>
+
+      <div class="items-2-col">
+        <form id="pediatricsForm" action="/doctors" method="GET">
+          <input type="hidden" name="Speciality" value="Pediatrics">
+          <button type="submit" style="display: none;">Submit</button>
+          <a
+            href="#"
+            class="pg_widget"
+            onclick="document.getElementById('pediatricsForm').submit(); return false;">
+            <img
+              src="/images/paediatricurology_icon.svg"
+              alt="icon">
+            <h5 class="items-2-h5">Pediatrics</h5>
+          </a>
+        </form>
+      </div>
+    </div>
+
+    <div class="items-2-row">
+      <div class="items-2-col">
+        <form id="orthopaedicForm" action="/doctors" method="GET">
+          <input type="hidden" name="Speciality" value="Orthopedic">
+          <button type="submit" style="display: none;">Submit</button>
+          <a
+            href="#"
+            class="pg_widget"
+            onclick="document.getElementById('orthopaedicForm').submit(); return false;">
+            <img
+              src="/images/orthopaedic_icon.svg"
+              alt="icon">
+            <h5 class="items-2-h5">Orthopedic</h5>
+          </a>
+        </form>
+      </div>
+
+      <div class="items-2-col">
+        <form id="gynecologyForm" action="/doctors" method="GET">
+          <input type="hidden" name="Speciality" value="Gynecology">
+          <button type="submit" style="display: none;">Submit</button>
+          <a
+            href="#"
+            class="pg_widget"
+            onclick="document.getElementById('gynecologyForm').submit(); return false;">
+            <img
+              src="/images/gynecology_icon.svg"
+              alt="icon">
+            <h5 class="items-2-h5">Gynecology</h5>
+          </a>
+        </form>
+      </div>
+
+      <div class="items-2-col">
+        <form id="dermatologyForm" action="/doctors" method="GET">
+          <input type="hidden" name="Speciality" value="Dermatology">
+          <button type="submit" style="display: none;">Submit</button>
+          <a
+            href="#"
+            class="pg_widget"
+            onclick="document.getElementById('dermatologyForm').submit(); return false;">
+            <img
+              src="/images/dermatology_icon.svg"
+              alt="icon">
+            <h5 class="items-2-h5">Dermatology</h5>
+          </a>
+        </form>
+      </div>
+    </div>
+
+    <div class="items-2-row">
+      <div class="items-2-col">
+        <form id="pulmonologyForm" action="/doctors" method="GET">
+          <input type="hidden" name="Speciality" value="Pulmonary">
+          <button type="submit" style="display: none;">Submit</button>
+          <a
+            href="#"
+            class="pg_widget"
+            onclick="document.getElementById('pulmonologyForm').submit(); return false;">
+            <img
+              src="/images/pulmonology_icon.svg"
+              alt="icon">
+            <h5 class="items-2-h5">Pulmonology</h5>
+          </a>
+        </form>
+      </div>
+
+      <div class="items-2-col">
+        <form id="entForm" action="/doctors" method="GET">
+          <input type="hidden" name="Speciality" value="ENT">
+          <button type="submit" style="display: none;">Submit</button>
+          <a
+            href="#"
+            class="pg_widget"
+            onclick="document.getElementById('entForm').submit(); return false;">
+            <img
+              src="/images/ent_icon.svg"
+              alt="icon">
+            <h5 class="items-2-h5">ENT</h5>
+            <h5 class="items-2-h5">(Ear, Nose, Throat)</h5>
+          </a>
+        </form>
+      </div>
+
+      <div class="items-2-col">
+        <form id="dentistryForm" action="/doctors" method="GET">
+          <input type="hidden" name="Speciality" value="Dentistry">
+          <button type="submit" style="display: none;">Submit</button>
+          <a
+            href="#"
+            class="pg_widget"
+            onclick="document.getElementById('dentistryForm').submit(); return false;">
+            <img
+              src="/images/dentistry_icon.svg"
+              alt="icon">
+            <h5 class="items-2-h5">Dentistry</h5>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.getElementById('doctor-search-input');
+      const suggestionsList = document.getElementById('doctor-suggestions');
+  
+      searchInput.addEventListener('input', function () {
+          const query = searchInput.value.trim();
+  
+          if (query.length > 0) {
+              fetch(`/search-doctors?query=${query}`)
+                  .then(response => response.json())
+                  .then(data => {
+                      suggestionsList.innerHTML = '';
+                      if (data.length > 0) {
+                          data.forEach(doctor => {
+                              const li = document.createElement('li');
+                              li.textContent = doctor.name;
+                              li.addEventListener('click', function () {
+                                  searchInput.value = doctor.name;
+                                  suggestionsList.style.display = 'none';
+                                  window.location.href = `doctor?doctorId=${doctor.doctorid}`;
+                              });
+                              suggestionsList.appendChild(li);
+                          });
+                          suggestionsList.style.display = 'block';
+                      } else {
+                          suggestionsList.style.display = 'none';
+                      }
+                  });
+          } else {
+              suggestionsList.style.display = 'none';
+          }
+      });
+  
+      document.addEventListener('click', function (e) {
+          if (!searchInput.contains(e.target) && !suggestionsList.contains(e.target)) {
+              suggestionsList.style.display = 'none';
+          }
+      });
+  });
+  </script>
+  <%- include("partials/footer.ejs") %>

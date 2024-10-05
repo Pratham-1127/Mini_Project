@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    color: #7ee858;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style for the password input wrapper */
+.password-wrapper {
+    position: relative; /* Position relative to position the icon */
+    width: 80%;
+}
+
+.password-wrapper input {
+    width: 100%; /* Ensure the input takes full width of the wrapper */
+}
+
+/* Style for the eye icon */
+.password-wrapper .fas {
+    position: absolute; /* Position the icon */
+    right: -16px; /* Position it towards the right end */
+    top: 40%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    cursor: pointer; /* Show pointer cursor on hover */
+    color: #7ee858; /* Icon color */
+}
+
+/* Button styles */
+button {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7ee858;
+    color: #fff;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #6fd94d;
+}
+
+p {
+    color: red;
+    margin-top: 10px;
+}
+
+.link {
+    color: #7ee858;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
